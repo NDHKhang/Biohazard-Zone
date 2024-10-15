@@ -72,7 +72,8 @@ namespace StarterAssets
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
 
-		private const float _threshold = 0.01f;
+		// Move input threshold
+		private const float _threshold = 0f;
 
 		private bool IsCurrentDeviceMouse
 		{
@@ -245,7 +246,8 @@ namespace StarterAssets
 			if (_verticalVelocity < _terminalVelocity)
 			{
 				_verticalVelocity += Gravity * Time.deltaTime;
-			}
+                //Debug.Log(Gravity);
+            }
 
 			_controller.Move(new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 
