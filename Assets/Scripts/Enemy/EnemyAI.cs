@@ -7,7 +7,7 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private Transform target;
 
-    [SerializeField] private float chaseRange = 5f;
+    [SerializeField] private EnemyData enemy;
     private float distanceToTarget;
     private bool isProvoke;
 
@@ -37,7 +37,7 @@ public class EnemyAI : MonoBehaviour
         {
             EngageTarget();
         }
-        else if(distanceToTarget < chaseRange)
+        else if(distanceToTarget < enemy.chaseRange)
         {
             isProvoke = true; // temporarily
         }
@@ -69,6 +69,6 @@ public class EnemyAI : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = new Color(1, 1, 0, 1F);
-        Gizmos.DrawWireSphere(transform.position, chaseRange);
+        Gizmos.DrawWireSphere(transform.position, enemy.chaseRange);
     }
 }
