@@ -4,27 +4,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private EnemyData enemy;
+    [SerializeField] private EnemyData enemyData;
 
-    private float health;
+    public float health;
+    public float damage;
+    public float chaseRange;
 
     void Start()
     {
-        health = enemy.health;
-    }
-
-    public void TakeDamage(float amount)
-    {
-        health -= amount;
-        
-        if (health <= 0)
-        {
-            Die();
-        }
-    }
-
-    private void Die()
-    {
-        Destroy(gameObject);
+        health = enemyData.health;
+        damage = enemyData.damage;
+        chaseRange = enemyData.chaseRange;
     }
 }

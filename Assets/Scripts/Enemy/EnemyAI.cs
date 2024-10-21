@@ -7,7 +7,7 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private Transform target;
 
-    [SerializeField] private EnemyData enemy;
+    private Enemy enemy;
     private float distanceToTarget;
     private bool isProvoke;
 
@@ -16,6 +16,7 @@ public class EnemyAI : MonoBehaviour
 
     void Awake()
     {
+        enemy = GetComponent<Enemy>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         anim = GetComponent<EnemyAnimation>();
     }

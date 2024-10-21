@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    [SerializeField] Transform target;
-    [SerializeField] EnemyData enemy;
-    private float damage;
+    [SerializeField] private Transform target;
+    private Enemy enemy;
 
-    void Start()
+    void Awake()
     {
-        damage = enemy.damage;
+        enemy = GetComponent<Enemy>();
     }
 
     public void AttackHitEvent()

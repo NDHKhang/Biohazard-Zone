@@ -47,10 +47,11 @@ public class Weapon : MonoBehaviour
         {
             Debug.Log("Hit" + hit.transform.name);
 
-            Enemy enemy = hit.transform.GetComponent<Enemy>();
-            if (enemy != null)
+            EnemyHealth enemyHealth = hit.transform.GetComponent<EnemyHealth>();
+
+            if (enemyHealth != null)
             {
-                enemy.TakeDamage(weaponDamage);
+                enemyHealth.TakeDamage(weaponDamage);
             }
 
             GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal), parent.transform);
