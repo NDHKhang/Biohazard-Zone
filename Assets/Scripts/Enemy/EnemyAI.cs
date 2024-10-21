@@ -13,9 +13,13 @@ public class EnemyAI : MonoBehaviour
 
     private NavMeshAgent navMeshAgent;
 
-    void Start()
+    void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+    }
+
+    void Start()
+    {
         isProvoke = false;
         distanceToTarget = Mathf.Infinity;
     }
