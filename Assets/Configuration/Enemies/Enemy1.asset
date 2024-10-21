@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Enemy1
   m_EditorClassIdentifier: 
   chaseRange: 5
+  damage: 20
   health: 10

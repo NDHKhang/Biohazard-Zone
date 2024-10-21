@@ -12,10 +12,12 @@ public class EnemyAI : MonoBehaviour
     private bool isProvoke;
 
     private NavMeshAgent navMeshAgent;
+    private EnemyAnimation anim;
 
     void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<EnemyAnimation>();
     }
 
     void Start()
@@ -62,11 +64,14 @@ public class EnemyAI : MonoBehaviour
 
     private void AttackTarget()
     {
+        anim.AttackState(true);
         Debug.Log("Got Attack");
     }
 
     private void ChaseTarget()
     {
+        anim.MoveState();
+        anim.AttackState(false);
         navMeshAgent.SetDestination(target.position);
     }
 

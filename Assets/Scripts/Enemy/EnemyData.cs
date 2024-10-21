@@ -6,5 +6,6 @@ using UnityEngine;
 public class EnemyData : ScriptableObject
 {
     public float chaseRange;
+    public float damage;
     public float health;
 }
