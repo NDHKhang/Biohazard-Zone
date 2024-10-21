@@ -75,10 +75,4 @@ public class EnemyAI : MonoBehaviour
         anim.AttackState(false);
         navMeshAgent.SetDestination(target.position);
     }
-
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = new Color(1, 1, 0, 1F);
-        Gizmos.DrawWireSphere(transform.position, enemy.chaseRange);
-    }
 }

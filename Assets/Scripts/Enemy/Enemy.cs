@@ -16,4 +16,10 @@ public class Enemy : MonoBehaviour
         damage = enemyData.damage;
         chaseRange = enemyData.chaseRange;
     }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = new Color(1, 1, 0, 1F);
+        Gizmos.DrawWireSphere(transform.position, enemyData.chaseRange);
+    }
 }
